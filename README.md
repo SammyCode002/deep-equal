@@ -1,14 +1,24 @@
 # Deep Equal
 
-A JavaScript function that checks if two values are "deeply equal" - meaning they have the same structure and values, even if they're different objects in memory.
+A JavaScript utility that checks if two values are "deeply equal," meaning they have the same structure and values even if they're different objects in memory.
 
 ## What it does
-```javascript
+
+```js
 const obj1 = { name: 'Sam', age: 25 };
 const obj2 = { name: 'Sam', age: 25 };
 
-obj1 === obj2        // false (different references)
+obj1 === obj2         // false (different references)
 deepEqual(obj1, obj2) // true (same structure & values)
+```
+
+## Usage
+
+```js
+const deepEqual = require('./deepEqual');
+
+deepEqual([1, 2, [3, 4]], [1, 2, [3, 4]]); // true
+deepEqual({ a: 1 }, { a: 2 });             // false
 ```
 
 ## Features
@@ -20,6 +30,7 @@ deepEqual(obj1, obj2) // true (same structure & values)
 - Uses recursion for deep comparison
 
 ## Run Tests
+
 ```bash
 npm install
 npm test
